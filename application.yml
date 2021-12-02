@@ -1,14 +1,33 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-todo-application
+  name: kustomize-todo-dev-application
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Phathdt/kustomize-todo.git
     targetRevision: HEAD
-    path: manifest
+    path: manifest/dev
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize-todo-prod-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Phathdt/kustomize-todo.git
+    targetRevision: HEAD
+    path: manifest/prod
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
