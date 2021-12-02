@@ -1,0 +1,12 @@
+bases:
+  - ../../base
+
+namePrefix: prod-
+
+commonLabels:
+  env: prod
+
+patches:
+  - replica-count.yml
+
+namespace: prod
