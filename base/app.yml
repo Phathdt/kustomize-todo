@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: nginx-demo
-        image:  gcr.io/google-samples/hello-app:1.0
+        image:  phathdt379/express-todo:1.7
         resources:
           requests:
             cpu: 100m
