@@ -7,7 +7,7 @@ metadata:
   name: prod-nginx-demo
   namespace: prod
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: nginx-demo
@@ -24,7 +24,7 @@ spec:
         env: prod
     spec:
       containers:
-      - image: phathdt379/express-todo:7725606b30b4ce36f3aa83eba8ad82ceaea08471
+      - image: phathdt379/express-todo:b59c994d37d35b22ffa7fca66bc96ba5a1439a40
         livenessProbe:
           failureThreshold: 3
           initialDelaySeconds: 5
