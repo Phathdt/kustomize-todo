@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-demo
+    env: prod
+  name: prod-nginx-demo
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-demo
+      env: prod
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx-demo
+        env: prod
+    spec:
+      containers:
+      - image: phathdt379/express-todo:prod-41fbad49041c704c807badd759a61a1c58904da9
+        livenessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 80
+          timeoutSeconds: 5
+        name: nginx-demo
+        ports:
+        - containerPort: 80
+          name: nginx-demo
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /_status/healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 2
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
