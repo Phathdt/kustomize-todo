@@ -3,7 +3,7 @@ kind: Kustomization
 
 images:
 - name: phathdt379/express-todo
-  newTag: dev-41fbad49041c704c807badd759a61a1c58904da9
+  newTag: dev-7c6f425d6913da73a33605bcc4d37ee38786aeaf
 
 resources:
 - app.yml
