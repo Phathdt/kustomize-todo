@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Phathdt/kustomize-todo.git
-    targetRevision: HEAD
+    targetRevision: develop
     path: manifest/dev
   destination:
     server: https://kubernetes.default.svc
@@ -26,7 +26,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Phathdt/kustomize-todo.git
-    targetRevision: HEAD
+    targetRevision: master
     path: manifest/prod
   destination:
     server: https://kubernetes.default.svc
