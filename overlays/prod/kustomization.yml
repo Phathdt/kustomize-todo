@@ -15,5 +15,7 @@ patchesStrategicMerge:
 namespace: prod
 
 images:
+- name: /express-todo
+  newTag: prod-5bf6758
 - name: phathdt379/express-todo
   newTag: prod-62b9799
