@@ -1,12 +1,19 @@
-bases:
-  - ../../base
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
 
 namePrefix: dev-
 
 commonLabels:
   env: dev
 
-patches:
-  - replica-count.yml
+patchesStrategicMerge:
+- replica-count.yml
 
 namespace: dev
+
+images:
+- name: phathdt379/express-todo
+  newTag: "1.7"
