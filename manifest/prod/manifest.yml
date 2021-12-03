@@ -24,7 +24,7 @@ spec:
         env: prod
     spec:
       containers:
-      - image: phathdt379/express-todo:prod-1b262832b1832786b9d047111b5110867c78553e
+      - image: phathdt379/express-todo:prod-62b9799
         livenessProbe:
           failureThreshold: 3
           initialDelaySeconds: 5
