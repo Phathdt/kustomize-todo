@@ -14,4 +14,4 @@ resources:
 - ../../base
 images:
 - name: phathdt379/express-todo
-  newTag: dev-3ea4dfa
+  newTag: dev-d7996f4

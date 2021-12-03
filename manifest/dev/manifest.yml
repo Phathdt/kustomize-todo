@@ -24,7 +24,7 @@ spec:
         env: dev
     spec:
       containers:
-      - image: phathdt379/express-todo:dev-3ea4dfa
+      - image: phathdt379/express-todo:dev-d7996f4
         livenessProbe:
           failureThreshold: 3
           initialDelaySeconds: 5
