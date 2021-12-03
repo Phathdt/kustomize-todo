@@ -2,8 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 images:
-- name: phathdt379/express-todo
-  newTag: b59c994d37d35b22ffa7fca66bc96ba5a1439a40
+  - name: phathdt379/express-todo
+    newTag: b59c994d37d35b22ffa7fca66bc96ba5a1439a40
 
 resources:
-- app.yml
+  - app.yml
