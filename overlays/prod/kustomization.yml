@@ -16,4 +16,4 @@ namespace: prod
 
 images:
 - name: phathdt379/express-todo
-  newTag: prod-62b9799
+  newTag: prod-452114c
